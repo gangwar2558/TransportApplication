@@ -1,0 +1,24 @@
+<div class ="col-sm-12">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+        <div class="page-header" id="contact">
+        <h2>Delete Stop</h2>
+        </div><!-- End Page Header -->
+            <form  name="form" id="form"   ng-submit="deleteStop()">
+                <div class="form-group">
+                    <label for="route">Route No*</label>
+                    <select id="route_no" name="route_no"  ng-model="$parent.selectedRoute"  ng-options="route.route_id for route in routeData">
+                        <option value="" >Select Route</option> // default value
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="delete_stop">Previous Stop* :</label>
+                    <select id="delete_stop" name="delete_stop" ng-model="$parent.selectedStop">
+                        <option ng-repeat = "stop in selectedRoute.drop_points" >{{stop}}</option>
+                    </select>     
+                </div>                   
+                <button type="submit" class="btn btn-info">Delete Stop</button>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+</div>

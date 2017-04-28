@@ -1,0 +1,15 @@
+.btn-lg {
+    padding: 10px 80px;
+    font-size: 20px;
+    border-radius:10px;
+}
+.btn-group-vertical > button{
+    margin-bottom:10px;
+}
+.bg-footer {
+  background: #000;
+  color: #fff;
+}
+input.ng-dirty.ng-invalid {
+    border: 1px solid red ;
+}

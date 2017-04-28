@@ -1,0 +1,26 @@
+<div class ="col-sm-12">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="page-header" id="contact">
+                <h2>Update Driver Details</h2>
+            </div><!-- End Page Header -->
+            <form    name= "form" id = "form"  ng-submit="updateDriverDetails()">
+                <div class="form-group">
+                    <label for="route">Route No*</label>
+                    <select id="route_no" name="route_no"  ng-model="$parent.selectedRoute"  ng-options="route.route_id for route in routeData">
+                        <option value="" >Select Route</option> // default value
+                    </select>
+                </div>  
+                <div class="form-group">
+                    <label for="driver_name">Driver Name*</label>
+                    <input id="driver_name" type="text" class="form-control"  placeholder="Enter Driver's Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="driver_phone">Driver Phone* :</label>
+                    <input id="driver_phone" type="text" class="form-control" placeholder="Enter Driver's Phone No." required>
+                </div>
+                <button type="submit" class="btn btn-info">Update</button>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+</div>

@@ -1,0 +1,47 @@
+<div ng-controller="FixedCabController">
+        <div class="text-center">
+            <div class="btn-group-vertical"><br>
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="setRoute(route.route_id);" ng-repeat="route in routeDetails">
+                  {{route.route_name}}
+                </button><br>
+            </div>
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content" ng-repeat="route in routeDetails | filter: { 'route_id': setRouteId }: true">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                            <h3 class="modal-title" id="myModalLabel">{{route.route_name}}</h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-sm-8">
+                                <div class="col-sm-4">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th>Drop Points</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr ng-repeat="droppoint in route.drop_points">
+                                            <td>{{ droppoint }}</td>
+                                          </tr>
+                                        </tbody>
+                                    </table>
+                                    <p><b>Driver Details: <br>
+                                        Name:  {{route.driver_name}}<br>
+                                        Phone: {{route.driver_phone}}</b>
+                                    </p>
+                                </div>
+                                <div class="col-sm-8">
+                                    <iframe ng-src="https://www.google.com/maps/d/u/1/embed?mid=1S0Uw8i3EV7FKxcEqiAbMlSskCCw" width="550" height="480"></iframe>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+</div>

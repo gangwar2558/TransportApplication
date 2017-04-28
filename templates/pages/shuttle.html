@@ -1,0 +1,23 @@
+
+<div class="container" ng-controller="GLTransport">
+  <div class="row">
+    <div class="col-sm-4">
+        <h2>Shuttle Timings and Route</h2><br>
+        <form>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" ng-click="setTab(1)" ng-checked="isSet(1)">Morning
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optradio" ng-click="setTab(2)" ng-checked="isSet(2)">Evening
+        </label>
+        </form><br> 
+        <!--  Morning shuttle timings -->
+        <shuttle-morning ng-if="isSet(1)"></shuttle-morning>
+        <!--  Evening shuttle timings -->
+        <shuttle-evening ng-if="isSet(2)"></shuttle-evening>
+    </div>
+    <div class="col-sm-8">
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1YbsUNTKihvNZFENPsKmTzdBP9bE" width="640" height="480"></iframe>
+    </div>
+  </div>
+</div>

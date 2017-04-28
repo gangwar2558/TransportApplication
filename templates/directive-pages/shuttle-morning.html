@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Departure Time</th>
+      </tr>
+    </thead>
+    <tbody ng-repeat="shuttleTiming in shuttleTimings.timingsMorning">
+      <tr>
+        <td>{{ shuttleTiming }}</td>
+      </tr>
+    </tbody>
+</table>
+<p class="bg-primary" ng-if="isSet(1)"> * Bus will leave from Noida City Center Metro Station to office.</p>

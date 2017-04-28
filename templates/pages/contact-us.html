@@ -1,0 +1,44 @@
+<!-- Contact -->
+<div class="container" ng-controller="ContactusCtrl" >
+<section>
+    <div class="page-header" id="contact">
+    <h2>Contact Us</h2>
+    </div><!-- End Page Header -->
+
+    <div class="row">
+        <div class="col-lg-8">
+            <form name="contactus" class="form-horizontal" ng-submit="validateContactus();">
+                <div class="form-group">
+                    <label for="userName" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="userName" id="userName" placeholder="Enter you name" required>
+                    </div>
+                </div><!-- End form group -->
+                <div class="form-group">
+                    <label for="userEmail" class="col-lg-2 control-label">Email</label>
+                    <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="userEmail" id="userEmail" placeholder="Enter you Email Address" required>
+                    </div>
+                </div><!-- End form group -->
+                <div class="form-group">
+                    <label for="user-url" class="col-lg-2 control-label">Summary</label>
+                    <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="summary" placeholder="Enter Summary" id="summary" required>
+                    </div>
+                </div><!-- End form group -->
+                <div class="form-group">
+                    <label for="user-message" class="col-lg-2 control-label">Description</label>
+                    <div class="col-lg-10">
+                    <textarea name="user-message" ng-model="description" id="userMessage" class="form-control" cols="20" rows="10" placeholder="Enter your Description" required></textarea>
+                    </div>
+                </div><!-- End form group -->
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><!-- End the row -->
+</section>
+</div>

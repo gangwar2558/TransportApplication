@@ -1,0 +1,70 @@
+
+<div class="col-sm-12">
+    <div class="col-sm-8">
+        <!-- adding buttons for various updates  -->
+        <button class="btn btn-primary " type="button" ng-click="setButtonId(11)">
+                 Add Stop 
+        </button>
+        <button class="btn btn-primary" type="button"  ng-click="setButtonId(22)">
+                 Update Driver Details 
+        </button>
+        <button class="btn btn-primary" type="button"  ng-click="setButtonId(33)">
+                 Delete Stop
+        </button>
+    </div>    
+</div>
+<!-- div when nothing is selected -->
+<div ng-show="buttonId == 0">
+   <br>
+   <br>
+    <h2>Please Select route From left side</h2>
+</div>
+
+<!-- directive when add stop is selected -->
+<div ng-show="buttonId == 11">
+    <add-stop> </add-stop>
+</div>
+
+<!-- directive when driver details is selected -->
+<div ng-show="buttonId == 22">
+    <driver-details> </driver-details>
+</div>
+
+<!-- directive when delete stop is selected -->
+<div ng-show="buttonId == 33">
+    <delete-stop> </delete-stop>
+</div>
+
+
+
+<div class="col-sm-12" ng-repeat="route in routeData | filter: {'route_id': buttonId }: true" >
+    <br>
+    <br>
+    <div>
+        {{route.route_name}}
+        
+    </div>
+    <div>
+         <table class="table table-bordered">
+            <thead>
+                <tr>       
+                  <th> Drop Points : </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <td ng-repeat="droppoint in route.drop_points">
+                   {{ droppoint }}
+                   </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+     <b>Driver Details: <br>
+        Name:  {{route.driver_name}}<br>
+        Phone: {{route.driver_phone}}
+     </b>
+    </div>
+
+</div>

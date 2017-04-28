@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Transport GL</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="script/jquery.min.js"></script>
+        <script src="script/bootbox.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+        <script src="https://unpkg.com/angular-ui-router@0.3.2/release/angular-ui-router.js"></script>
+    </head>
+    <body data-spy="scroll" data-target="#my-navbar" ng-app="Transport" ng-controller="mainController">
+        <!-- Navbar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="my-navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" ui-sref="#">Transport GL</a>
+                    </div><!-- Navbar Header-->
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a ui-sref="shuttle">Shuttle</a>
+                            <li><a ui-sref="fixedCab">Fixed Cab</a>
+                            <li><a ui-sref="onCall">On Call</a> 
+                            <li><a ui-sref="contactUs">ContactUs</a> 
+                            <li><a ui-sref="admin">Admin</a> 
+                        </ul>
+                    </div>
+                </div><!-- End Container-->
+            </nav><!-- End navbar -->
+            <!-- jumbotron-->
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <h1>GlobalLogic Transport</h1>
+                </div><!-- End container -->
+            </div><!-- End jumbotron-->
+        
+            <!-- Displaying the data of different pages using routing-->
+            <ui-view></ui-view>
+            
+            <script src="script/root.js"></script>
+            <script src="script/controllers/GLTransport.js"></script>
+            <script src="script/controllers/FixedCabController.js"></script>
+            <script src="script/controllers/AdminCtrl.js"></script>
+            <script src="script/controllers/ContactusCtrl.js"></script>
+            <script src="script/controllers/OncallCtrl.js"></script>
+            <script src="script/directives/addStop.js"></script>
+            <script src="script/directives/deleteStop.js"></script>
+            <script src="script/directives/driverDetails.js"></script>
+            <script src="script/directives/shuttleData.js"></script>
+            <script src="script/directives/shuttleEvening.js"></script>
+            <script src="script/directives/shuttleMorning.js"></script>
+    </body>
+</html>

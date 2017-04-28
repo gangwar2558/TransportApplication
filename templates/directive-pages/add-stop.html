@@ -1,0 +1,29 @@
+
+<div class ="col-sm-12">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="page-header" id="contact">
+                <h2>Add Stop</h2>
+            </div><!-- End Page Header -->
+            <form name = "form" ng-submit="addStop()" id="form" >
+                <div class="form-group">
+                    <label for="route">Route No*</label>
+                    <select id="route_no" name="route_no"  ng-model="$parent.selectedRoute"  ng-options="route.route_id for route in routeData">
+                        <option value="" >Select Route</option> // default value
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="previous_stop">Previous Stop* :</label>
+                    <select id="prev_stop" name="prev_stop" ng-model = "$parent.selectedStop">
+                        <option  ng-repeat = "stop in selectedRoute.drop_points" >{{stop}}</option>
+                    </select>
+                </div>  
+                <div class="form-group">
+                    <label for="new_stop">New Stop*</label>
+                    <input id="new_stop" type="text" class="form-control" placeholder="Enter New Stop" required>
+                </div>
+                <button type="submit" class="btn btn-info" >ADD Stop</button>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+</div>
